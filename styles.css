@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    font-family: 'Fira Code', 'Courier New', 'Consolas', monospace;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.terminal {
+    width: 90%;
+    max-width: 1000px;
+    height: 80vh;
+    background: #0a0a0a;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #1a1a1a;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.terminal-title {
+    color: #00ff00;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.minimize { background: #ffbd2e; color: #000; }
+.maximize { background: #28ca42; color: #000; }
+.close { background: #ff5f56; color: #000; }
+
+.terminal-body {
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.output {
+    flex: 1;
+    overflow-y: auto;
+    color: #00ff00;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.line {
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.confession {
+    color: #ffff00;
+    margin: 10px 0;
+    padding: 5px 0;
+    border-left: 3px solid #00ff00;
+    padding-left: 10px;
+}
+
+.confession-meta {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.error {
+    color: #ff6b6b;
+}
+
+.success {
+    color: #51cf66;
+}
+
+.prompt {
+    color: #00ff00;
+    font-weight: 500;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    color: #00ff00;
+    font-size: 14px;
+}
+
+.terminal-input {
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    flex: 1;
+    margin-left: 5px;
+}
+
+.cursor {
+    color: #00ff00;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Add font loading fallback */
+@supports not (font-family: 'Fira Code') {
+    body {
+        font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+    }
+}
+
+.output::-webkit-scrollbar {
+    width: 8px;
+}
+
+.output::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.output::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+.output::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.status {
+    color: #888;
+    font-size: 11px;
+    font-family: inherit;
+    margin: 2px 0 6px 0;
+    user-select: none;
+}

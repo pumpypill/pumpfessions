@@ -1,0 +1,31 @@
+{
+  "name": "pumpfessions",
+  "version": "1.0.0",
+  "description": "Terminal themed feed for Solana ecosystem confessions",
+  "main": "index.html",
+  "keywords": [
+    "solana",
+    "terminal",
+    "confessions",
+    "pump.fun",
+    "web3"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "nanoid": "^5.0.7"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
