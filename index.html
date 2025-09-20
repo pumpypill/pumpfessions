@@ -4,39 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <meta name="description" content="Pumpfessions - Anonymous pump.fun confessions">
     <title>Pumpfessions - Terminal Confessions</title>
     <link rel="stylesheet" href="./styles.css">
+    <!-- Add favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="terminal">
-        <div class="terminal-header">
-            <span class="terminal-title">pumpfessions@solana:~$</span>
-            <div class="terminal-controls">
-                <span class="control minimize">-</span>
-                <span class="control maximize">□</span>
-                <span class="control close">×</span>
-            </div>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="header-logo">PUMPFESSIONS</div>
+            <div class="header-tagline">Anonymous pump.fun Confessions</div>
         </div>
-        
-        <div class="terminal-body">
-            <div class="output" id="output">
-                <div class="line">Welcome to Pumpfessions - Anonymous Solana Confessions</div>
-                <div class="line">Type 'help' for available commands</div>
-                <div class="line prompt-line">
-                    <span class="prompt">user@pumpfessions:~$ </span>
+    </header>
+
+    <main class="terminal-container">
+        <div class="terminal" role="main" aria-label="Confession Terminal">
+            <header class="terminal-header">
+                <span class="terminal-title">pumpfessions@solana:~$</span>
+                <div class="terminal-controls" aria-hidden="true">
+                    <span class="control minimize" title="Minimize">-</span>
+                    <span class="control maximize" title="Maximize">□</span>
+                    <span class="control close" title="Close">×</span>
+                </div>
+            </header>
+            
+            <div class="terminal-body">
+                <div class="output" id="output" aria-live="polite" tabindex="0">
+                    <div class="line">Welcome to Pumpfessions - Anonymous pump.fun Confessions (Local Mode)</div>
+                    <div class="line">Type 'help' for available commands</div>
+                    <div class="line">Loading confession feed...</div>
+                    <div class="line prompt-line">
+                        <span class="prompt">user@pumpfessions:~$ </span>
+                    </div>
+                </div>
+                
+                <div class="input-line">
+                    <label for="terminal-input" class="prompt">user@pumpfessions:~$ </label>
+                    <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" aria-label="Terminal input" autofocus>
+                    <span class="cursor" aria-hidden="true">█</span>
                 </div>
             </div>
-            
-            <div id="live-status" class="status">[connecting...]</div>
-            
-            <div class="input-line">
-                <span class="prompt">user@pumpfessions:~$ </span>
-                <input type="text" id="terminal-input" class="terminal-input" autofocus>
-                <span class="cursor">█</span>
-            </div>
         </div>
-    </div>
+    </main>
 
-    <script src="./script.js"></script>
+    <!-- Add defer to improve page loading -->
+    <script src="./script.js" defer></script>
 </body>
 </html>

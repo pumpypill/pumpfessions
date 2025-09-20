@@ -1,50 +1,28 @@
-## Introduction
+## Pumpfessions (Static Version)
+Current version: 1.1.1
 
-Pumpfessions is a terminal themed feed for users to post their confessions for their activities on pump.fun and in the Solana ecosystem.
-
-Pumpfessions now supports a live shared feed (multi-user) via a lightweight Node/Express backend (SSE real-time updates).
+Terminal-themed anonymous confession board stored locally in your browser (localStorage). Includes auto-feed with preloaded pump.fun themed confessions.
 
 ## Features
 
-- Terminal-style interface with authentic command-line aesthetics
-- Anonymous confession posting system
-- Local persistent storage (browser localStorage)
-- Interactive terminal commands
-- Retro green-on-black styling
+- Retro terminal UI
+- Anonymous local confessions
+- Persistent via localStorage
+- Auto-feed of preloaded pump.fun themed confessions
+- Simple command interface
 
 ## Usage
 
-This is a pure static site. Open `index.html` directly in a modern browser (double-click or drag into a tab). No build or local server is required.
+Open `index.html` in any modern browser (or host via GitHub Pages). Everything runs client-side.
 
 ## Commands
 
-- `confess <message>` - Post a new confession
-- `feed` - View recent confessions
-- `clear` - Clear the terminal
-- `help` - Show available commands
+- `confess <message>`  Post a confession
+- `feed`               Show recent confessions
+- `clear`              Clear the terminal screen
+- `about`              Info
+- `help`               Command list
 
-## Tech Stack
+## Data
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Browser localStorage for persistence
-
-## Live (Multi-User) Mode
-
-1. Install dependencies: `npm install`
-2. Start server: `npm start`
-3. Open: http://localhost:3000
-4. All connected browsers see new confessions instantly.
-
-## API
-
-- GET /api/confessions
-- POST /api/confessions { message }
-- GET /api/stream (SSE)
-
-Falls back to local-only mode if server unreachable.
-
-## Notes
-
-All data stays in your browser; nothing is uploaded.
+All data stays in your browser. Clearing site data or localStorage removes confessions.
